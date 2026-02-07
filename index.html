@@ -202,7 +202,7 @@
               <br>Гибкий график тренировок позволит вам выбрать удобное время для занятий.
               Присоединяйтесь к нашему клубу и станьте частью нашей спортивной семьи!
       </div>
-      <a href="https://t.me/Anthem_Gym"  target="blank"><button class="join-us-form-button button transparent fade-up"type="submit">Написать нам</button></a>
+      <button class="join-us-form-button button transparent fade-up" type="submit">Написать нам</button>
       </div>
   </div>
 
@@ -399,61 +399,30 @@
   items.forEach(item => observer.observe(item));
 
 //burgerButton
-  // ===== BURGER MENU =====
-const burger = document.getElementById('burger');
-const menu = document.getElementById('mobileMenu');
-const overlay = document.getElementById('menuOverlay');
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('menuOverlay');
 
-burger.addEventListener('click', () => {
-  toggleMenu();
-});
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    menu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.style.overflow =
+      menu.classList.contains('active') ? 'hidden' : '';
+  });
 
-// Закрытие по клику на overlay
-overlay.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+  menu.querySelectorAll('a').forEach(link =>
+    link.addEventListener('click', closeMenu)
+  );
 
-// Закрытие по клику на любую область меню (кроме ссылок)
-menu.addEventListener('click', (e) => {
-  // Если клик не на ссылке, закрываем меню
-  if (!e.target.closest('a')) {
-    closeMenu();
+  function closeMenu() {
+    burger.classList.remove('active');
+    menu.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
   }
-});
 
-// Закрытие по клику на ссылки
-menu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', closeMenu);
-});
-
-// Закрытие по клавише Escape
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closeMenu();
-  }
-});
-
-function toggleMenu() {
-  const isActive = menu.classList.contains('active');
-  
-  if (isActive) {
-    closeMenu();
-  } else {
-    openMenu();
-  }
-}
-
-function openMenu() {
-  burger.classList.add('active');
-  menu.classList.add('active');
-  overlay.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeMenu() {
-  burger.classList.remove('active');
-  menu.classList.remove('active');
-  overlay.classList.remove('active');
-  document.body.style.overflow = '';
-}
 /*==== SLIDER ====*/
 document.querySelectorAll('.motivation-slider').forEach(slider => {
     const slides = slider.querySelectorAll('.slide');
