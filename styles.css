@@ -1691,8 +1691,6 @@ display: none;
 
   .coach-modal{
     align-items: flex-end;
-
-    padding-bottom: 300px;
   }
   .coach-modal__content{
     width: 100%;
