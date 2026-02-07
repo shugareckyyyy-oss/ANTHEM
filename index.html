@@ -225,7 +225,7 @@
           <div class="coach-photo">
             <img src="./images/trainers/trainer1.jpg" alt="">
           </div>
-          <h3 class="coach-name backdrop-title">Шамиль <br> Амирсейидов</h3>
+          <h3 class="coach-name">Шамиль <br> Амирсейидов</h3>
           <p class="coach-role">Главный тренер клуба</p>
           <button class="coaches-button button transparent"
            data-achievements="Мастер спорта по кикбоксингу (К1) |
@@ -238,7 +238,7 @@
           <div class="coach-photo">
             <img src="./images/trainers/trainer4.jpg" alt="">
           </div>
-          <h3 class="coach-name backdrop-title">Никита <br> Носов</h3>
+          <h3 class="coach-name">Никита <br> Носов</h3>
           <p class="coach-role">Тренер по тайскому боксу</p>
           <button class="coaches-button button transparent"
           data-text="Никита Носов"
@@ -256,7 +256,7 @@
           <div class="coach-photo">
             <img src="./images/trainers/trainer2.jpg" alt="">
           </div>
-          <h3 class="coach-name backdrop-title">Иван <br> Литвяков</h3>
+          <h3 class="coach-name">Иван <br> Литвяков</h3>
           <p class="coach-role">Тренер по боксу и ОФП</p>
           <button class="coaches-button button transparent"
           data-achievements=
@@ -270,7 +270,7 @@
           <div class="coach-photo">
             <img src="./images/trainers/trainer3.jpg" alt="">
           </div>
-          <h3 class="coach-name backdrop-title">Василий <br>Лексин</h3>
+          <h3 class="coach-name">Василий <br>Лексин</h3>
           <p class="coach-role">Тренер по боксу и ОФП</p>
           <button class="coaches-button button transparent"
           data-achievements="Тренерский стаж с 2021 |
@@ -371,7 +371,7 @@
   <div class="coach-modal__content">
     <button class="coach-modal__close">×</button>
 
-    <h3 class="coach-modal__title title-big">Спортивные достижения</h3>
+    <h3 class="coach-modal__title backdrop-title batitle-big">Спортивные достижения</h3>
 
     <ul class="coach-modal__list">
       <!-- пункты подставляются из data-атрибута -->
@@ -555,7 +555,7 @@ window.addEventListener('orientationchange', () => {
 
 //скрипт для кнопки подробнее в тренерах
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('pointerdown', () => {
 
   const modal = document.querySelector('.coach-modal');
   const list = modal.querySelector('.coach-modal__list');
