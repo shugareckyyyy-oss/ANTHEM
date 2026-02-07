@@ -10,6 +10,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
   <link rel="manifest" href="./images/favicon/site.webmanifest">
+  <meta name="description" content="Anthem - клуб кикбоксинга и бокса для детей и взрослых во Владимире. Профессиональные тренеры, индивидуальный подход.">
+  <meta name="keywords" content="бокс, кикбоксинг, тайский бокс, тренировки, Владимир, спорт, единоборства">
+  <meta property="og:title" content="Anthem Gym - Клуб единоборств во Владимире">
+  <meta property="og:description" content="Профессиональные тренировки по боксу и кикбоксингу для взрослых и детей">
+  <meta property="og:image" content="./images/og-image.jpg">
+  <meta property="og:url" content="https://anthem-gym.ru">
 </head>
 
 <body>
@@ -596,6 +602,17 @@ document.addEventListener('pointerdown', () => {
   overlay.addEventListener('click', closeModal);
   closeBtn.addEventListener('click', closeModal);
 
+});
+//прогрессбар
+const progressBar = document.createElement('div');
+progressBar.className = 'progress-bar';
+document.body.appendChild(progressBar);
+
+window.addEventListener('scroll', () => {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  progressBar.style.width = scrolled + '%';
 });
 </script>
 <div class="lightbox" id="lightbox">
