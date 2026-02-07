@@ -751,7 +751,7 @@ grid-template-columns: repeat(2, 1fr);
   align-items: center;
   padding: 80px 15px;
   text-align: center;
-  background-color: var(--color-dark);
+  background-color: var(--color-dark-alternate);
 
 }
 
@@ -1122,6 +1122,88 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
   border-radius: 12px;
 }
 
+
+
+.coaches-section-title{
+  display: inline;
+  align-items: center;
+  font-size: clamp(40px, 4.2vw, 90px);
+  line-height: 1;
+  text-align: center;
+}
+.coaches-section {
+  padding: 60px 20px;
+  background-color: var(--color-dark);
+  text-align: center;
+}
+
+.coaches-section .section-title {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+/* Грид карточек */
+.coaches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  justify-items: center;
+  margin-top: 40px;
+}
+
+.coaches-slider {
+  overflow: visible;
+}
+
+.coaches-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+/* Карточка тренера */
+.coach-card {
+  background: var(--color-dark-alternate);
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
+  max-width: 280px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coach-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Фото тренера */
+.coach-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+/* Имя и роль */
+.coach-name {
+  font-size: 20px;
+  margin: 12px 0 6px;
+  color: var(--color-white);
+  font-weight: 600;
+}
+.coach-role {
+  font-size: 14px;
+  color: var(--color-lite-gray);
+  margin: 0;
+}
+
+/* точки и слайдер обозначение */
+
+
+
 @media(max-width: 1919px){
   .motivation-card-image .motivation-card-image1{
     margin-block: -20px;
@@ -1434,4 +1516,21 @@ display: none;
 .footer-subscribe:not(:last-child){
   margin-bottom: 40px
 }
+
+  .coaches-slider {
+    overflow: hidden;
+  }
+
+  .coaches-track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.3s ease;
+    will-change: transform;
+  }
+
+  .coach-card {
+    flex: 0 0 85%;
+    max-width: 85%;
+  }
+
 }
