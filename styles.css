@@ -993,7 +993,8 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 .mobile-menu {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.8);
+  background: rgba(0,0,0,.4);
+  backdrop-filter: blur(3px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1233,7 +1234,8 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 .coach-modal__overlay2 {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,.7);
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(3px);
   z-index: 3;
 }
 
