@@ -572,40 +572,65 @@ document.querySelectorAll('.motivation-slider').forEach(slider => {
 
 
 // скрипт для картоек тренеров
-const track = document.querySelector('.coaches-track');
+(function () {
+  const slider = document.querySelector('.coaches-slider');
+  const track = slider.querySelector('.coaches-track');
+  const cards = track.querySelectorAll('.coach-card');
 
-let startX = 0;
-let currentX = 0;
-let index = 0;
+  if (!slider || cards.length === 0) return;
 
-const cards = document.querySelectorAll('.coach-card');
+  let index = 0;
+  let startX = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+  let isDragging = false;
+  let cardWidth = cards[0].offsetWidth + 16;
 
-function updateSlider() {
-  const cardWidth = cards[0].offsetWidth + 16;
-  track.style.transform = `translateX(${-index * cardWidth}px)`;
-}
-
-track.addEventListener('touchstart', e => {
-  startX = e.touches[0].clientX;
-});
-
-track.addEventListener('touchmove', e => {
-  currentX = e.touches[0].clientX;
-});
-
-track.addEventListener('touchend', () => {
-  const diff = startX - currentX;
-
-  if (diff > 50 && index < cards.length - 1) {
-    index++;
+  function setPosition() {
+    track.style.transform = `translateX(${currentTranslate}px)`;
   }
 
-  if (diff < -50 && index > 0) {
-    index--;
+  function setIndexByTranslate() {
+    index = Math.round(Math.abs(currentTranslate) / cardWidth);
+    index = Math.max(0, Math.min(index, cards.length - 1));
   }
 
-  updateSlider();
-});
+  function snapToCard() {
+    currentTranslate = -index * cardWidth;
+    prevTranslate = currentTranslate;
+    track.style.transition = 'transform 0.3s ease';
+    setPosition();
+  }
+
+  function touchStart(e) {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+    track.style.transition = 'none';
+  }
+
+  function touchMove(e) {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const delta = currentX - startX;
+    currentTranslate = prevTranslate + delta;
+    setPosition();
+  }
+
+  function touchEnd() {
+    isDragging = false;
+    setIndexByTranslate();
+    snapToCard();
+  }
+
+  track.addEventListener('touchstart', touchStart, { passive: true });
+  track.addEventListener('touchmove', touchMove, { passive: true });
+  track.addEventListener('touchend', touchEnd);
+
+  window.addEventListener('resize', () => {
+    cardWidth = cards[0].offsetWidth + 16;
+    snapToCard();
+  });
+})();
 </script>
 <div class="lightbox" id="lightbox">
   <img id="lightboxImage" src="" alt="">
