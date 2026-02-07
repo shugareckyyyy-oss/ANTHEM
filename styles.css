@@ -1186,7 +1186,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 }
 
 .coach-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-15px);
   box-shadow: 0 5px 12px rgba(0,0,0,0.15);
 }
 
@@ -1371,6 +1371,10 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
   .coach-card{
     max-width: 300px;
   }
+  .coach-card:hover {
+  transform: translateY(-3px);
+
+}
 }
 
 @media (max-width: 1024px) {
