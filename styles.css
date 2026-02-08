@@ -200,11 +200,6 @@ button {
 }
 
 /**
-  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
- */
-svg * {
-  transition-property: fill, stroke;
-}
 
 /**
   Приведение рамок таблиц в классический 'collapse' вид
@@ -261,7 +256,9 @@ body{
     font-family: var(--font-family-base);
 }
 a, button, input, textarea, svg * {
-  text-decoration: var(--transition-duration);
+  transition: color var(--transition-duration);
+  background-color: var(--transition-duration);
+  border-color: var(--transition-duration);
 }
 
 svg *[fill]{ fill:currentColor}
@@ -932,7 +929,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.5);
-  z-index: -1;
+  z-index: 0;
 }
 
 .cta-border::after {
@@ -1073,12 +1070,13 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 .motivation-slider {
   position: relative;
   touch-action: pan-y;
-  cursor: pointer;
+  cursor: grab;
   width: 100%;
   max-width: auto;
-  height: 900px;
+  height: min(900px, 80vh);
   overflow: hidden;
   border-radius: 16px;
+
 }
 
 .motivation-slider .slide {
@@ -1104,7 +1102,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 5000;
+  z-index: 1200;
 
   opacity: 0;
   pointer-events: none;
@@ -1192,7 +1190,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 
 /* Фото тренера */
 .coach-photo img {
-  width: 400px;
+  width: 100;
   height: auto;
   border-radius: 6px;
   object-fit: cover;
@@ -1248,6 +1246,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
   z-index: 5000;
   background-color: var(--color-dark-alternate);
   border-radius: 20px;
+  z-index: 1001;
 
   
 }
@@ -1343,7 +1342,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
   width: 0%;
   height: 3px;
   background: var(--color-yelow-anthem);
-  z-index: 9999;
+  z-index: 1100;
   transition: width 0.1s ease;
 }
 
@@ -1602,7 +1601,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 }
 
 .training-types-item{
-  ----trainingTypesItemBgIconSize: 50px;
+  --trainingTypesItemBgIconSize: 50px;
   row-gap: 10px;
 }
 .training-types-image{
