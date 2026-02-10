@@ -171,6 +171,7 @@ label {
 /**
   Убирает серую подсветку при тапе на мобильных устройствах (iOS/Android)
  */
+a,
 button {
   -webkit-tap-highlight-color: transparent;
 }
@@ -199,10 +200,7 @@ button {
   stroke: currentColor;
 }
 
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
+
 /**
 
 /**
