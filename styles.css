@@ -618,9 +618,20 @@ column-gap: 14px;
 }
 
 .motivation-card-image {
-  margin-block: -60px;
+  margin-block: -20px;
   height: auto;
+
+  filter: grayscale(100%);
+  transition: filter 1s ease;
+
+  transform: scale(1.03);
 }
+.motivation-card.is-active .motivation-card-image {
+  filter: grayscale(0%);
+}
+
+
+
 .motivation-card-image1{
 padding-bottom: 80px;
 height: auto;
@@ -960,12 +971,12 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 
 /* ===== BURGER BUTTON ===== */
 .burger {
-  width: 32px;
+  width: 22px;
   aspect-ratio: 1;
   background: none;
   border: none;
   position: fixed;  
-  top: 24px;           
+  top: 31px;           
   right: 20px;          
   cursor: pointer;
   z-index: 2000;       
@@ -1515,8 +1526,8 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
   }
 
   .header {
-    padding-top: 10px;
     justify-content: space-between;
+    min-height: 80px;
   }
   
   .banner{
@@ -1524,7 +1535,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
   }
 
   .header-logo-image{
-    width: 80px;
+    width: 50px;
     height: auto;
   }
 

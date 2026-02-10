@@ -190,7 +190,7 @@
                 Присоединиться
               </a>
             </div>
-            <img class="motivation-card-image1" src="./images/motivation/5.webp" alt="упражнения в спортивном зале"
+            <img class="motivation-card-image1 motivation-card-image" src="./images/motivation/5.webp" alt="упражнения в спортивном зале"
               width="518" height="760" loading="lazy">
 
           </div>
@@ -417,7 +417,30 @@
 </div>
 
 <script>
-  // ===== 1. Анимация fade-up (появление элементов при скролле) =====
+ // ===== Анимация motivation-card ====
+  const cards = document.querySelectorAll('.motivation-card');
+
+const observerr = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-active');
+      } else {
+        entry.target.classList.remove('is-active');
+      }
+    });
+  },
+  {
+    root: null,
+    rootMargin: '-47% 0px -47% 0px',
+    threshold: 0
+  }
+);
+
+cards.forEach(card => observerr.observe(card));
+
+
+  // ===== Анимация fade-up (появление элементов при скролле) =====
   const items = document.querySelectorAll('.fade-up');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
