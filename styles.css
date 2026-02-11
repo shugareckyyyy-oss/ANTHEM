@@ -1604,8 +1604,8 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 
 /* контейнер под анимацию */
 .preloader-inner {
-  width: 120px;
-  height: 120px;
+  width: auto;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1614,7 +1614,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 /* логотип */
 .preloader-logo {
   width: 100px;
-  animation: pulse 1.5s infinite;
+  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
