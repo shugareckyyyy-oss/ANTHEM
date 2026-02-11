@@ -1442,6 +1442,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
   
   background: rgba(0, 0, 0, 0.4);
   min-height: 135px;
+ 
 }
 .schedule__item--sunday{
   grid-column: 1 / -1;
@@ -1454,10 +1455,12 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 5px;
 }
 
 .schedule__events {
   padding: 15px 20px;
+  border-radius: 5px;
 }
 
 .schedule__events p {
