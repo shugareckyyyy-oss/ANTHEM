@@ -1614,7 +1614,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 /* логотип */
 .preloader-logo {
   width: 100px;
-  animation: pulse 2s infinite;
+  animation: pulse 0.8s infinite;
 }
 
 @keyframes pulse {
