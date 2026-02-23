@@ -381,6 +381,7 @@ h1,h2,h3,h4,h5,h6{
   border-radius: var(--border-radius);
   white-space: nowrap;
   text-decoration: none;
+  transition: all 0.5s ease;
 
 }
 
@@ -392,6 +393,7 @@ h1,h2,h3,h4,h5,h6{
   color: var(--color-white);
   background-color: transparent;
   border: var(--border);
+  transition: all 0.5s ease;
   
 
 
@@ -421,6 +423,7 @@ h1,h2,h3,h4,h5,h6{
   border: 1px solid black;
   border-radius: 50%;
   transition-duration: 0.2s;
+  transition: all 0.5s ease;
 
 }
 
@@ -466,7 +469,8 @@ select.input:invalid{
 }
 .button:hover{
   background-color: var(--color-yelow-anthem);
-  transition-duration: 0.2s;
+  transition-duration: 0.3s;
+  transform: translateY(-3px);
 }
 
  #preloader {
@@ -583,6 +587,7 @@ column-gap: 14px;
   padding: 7;
   background-color: transparent;
   border: none;
+  transition: all 0.5s ease;
 }
 .banner-pagination-button.is-current::after{
   background-color: var(--color-white);
@@ -648,6 +653,7 @@ height: auto;
 }
 .motivation-card-button{
   margin-top: 10px;
+  transition: all 0.5s ease;
 }
 .motivation-card-title:not(:last-child){
   margin-bottom: 14px;
@@ -743,7 +749,7 @@ margin-left: 0.14em;
 
 .join-us-form-button{
   margin-top: 50px;
-
+  transition: all 0.5s ease;
 }
 
 .join-us-form-body{
@@ -910,6 +916,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 
 .footer-subscribe-button:hover{
   background-color: var(--color-lite-gray);
+  transition: all 0.5s ease;
 }
 .footer-subscribe-input{
   padding-right: 70px;
@@ -1270,7 +1277,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 }
 
 .coaches-button{
-  margin-block: 30px;
+  margin-block: 30px;;
 }
 
 .coach-modal {
@@ -1363,6 +1370,7 @@ grid-template-columns:  var(--footer-logoWidhts) repeat(3, 1fr);
 
 .coach-modal__button:hover {
   background: #fff;
+  transition: all 0.5s ease;
 }
 
 .coach-modal__close {
