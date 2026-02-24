@@ -486,7 +486,7 @@
     <div class="footer-extra">
       <div class="footer-extra-inner container">
         <div class="footer-copyright">
-          © <time datetime="2026">2026</time> <a href="https://t.me/shuga_tattoo" target="_blank">Shuga-coding</a>, Все права защищены | Политика конфиденциальности
+          © <time datetime="2026">2026</time> <a href="https://t.me/shuga_tattoo" target="_blank">Shuga-coding</a>, Все права защищены | <a href="./policy.html" target="_blank">политикой обработки данных</a>.
         </div>
       </div>
     </div>
@@ -510,6 +510,21 @@
   </div>
 </div>
 
+<!-- COOKIE-->
+ <div id="cookieBanner" class="cookie-banner">
+  <div class="cookie-container">
+    <div class="cookie-text">
+      Мы используем cookie и сервисы аналитики для улучшения работы сайта.
+      Продолжая пользоваться сайтом, вы соглашаетесь с 
+      <a href="./policy.html" target="_blank">политикой обработки данных</a>.
+    </div>
+    <div class="cookie-buttons">
+      <button id="acceptCookies" class="cookie-btn primary">Принять</button>
+      <button id="declineCookies" class="cookie-btn secondary">Отклонить</button>
+    </div>
+  </div>
+</div>
+
 <script>
 
 //===== Прелоадер =====
@@ -521,7 +536,9 @@ window.addEventListener("load", () => {
       preloader.remove();
     });
   }, 800);
-});
+  showCookieBanner();
+})
+;
 
 
  // ===== Анимация motivation-card ====
@@ -932,11 +949,54 @@ window.addEventListener('scroll', () => {
   const scrolled = (winScroll / height) * 100;
   progressBar.style.width = scrolled + '%';
 });
+
+// COOKIE
+
+function loadMetrika() {
+    const script = document.createElement("script");
+    script.src = "https://mc.yandex.ru/metrika/tag.js";
+    script.async = true;
+    document.head.appendChild(script);
+
+    script.onload = function() {
+        ym(XXXXXXX, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    };
+}
+
+function showCookieBanner() {
+    const banner = document.getElementById("cookieBanner");
+
+    if (!localStorage.getItem("cookieDecision")) {
+        banner.classList.add("show");
+    } else if (localStorage.getItem("cookieDecision") === "accepted") {
+        loadMetrika();
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const acceptBtn = document.getElementById("acceptCookies");
+    const declineBtn = document.getElementById("declineCookies");
+
+    acceptBtn.addEventListener("click", function() {
+        localStorage.setItem("cookieDecision", "accepted");
+        document.getElementById("cookieBanner").classList.remove("show");
+        loadMetrika();
+    });
+
+    declineBtn.addEventListener("click", function() {
+        localStorage.setItem("cookieDecision", "declined");
+        document.getElementById("cookieBanner").classList.remove("show");
+    });
+
+});
 </script>
 
-<div class="lightbox" id="lightbox">
-  <img id="lightboxImage" src="" alt="">
-</div>
 
 
 
