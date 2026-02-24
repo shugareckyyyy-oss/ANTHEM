@@ -533,6 +533,13 @@
 </div>
 
 <script>
+  window.addEventListener("load", function () {
+  const video = document.getElementById("heroVideo");
+  const source = video.querySelector("source");
+
+  source.src = source.dataset.src;
+  video.load();
+});
 
 //===== Прелоадер =====
 window.addEventListener("load", () => {
